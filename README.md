@@ -39,7 +39,7 @@ These are some defines:
 
 MemoryStorage<Dem> storage(10, { 1, 699, 102, 32});
 	
-MemoryStorage<int> storage(64, { 102, 32});
+MemoryStorage<double> storage(64, { 102, 32});
 	
 MemoryStorage<char> storage(1, { 1});
 	
