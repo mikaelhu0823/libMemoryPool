@@ -10,6 +10,7 @@ struct Dem {
 };
 
 [MemoryPool]: the usage is showed below:
+
 MemoryPool<T>(SizeType size_type, size_t pool_size) ;//T: std data, or user-defined pod-type data struct; size_type can be any num of pieces of T type memory, like 1, 16,etc. Pool_size is the inited size of the pool.
 
 These are some defines:
@@ -22,6 +23,7 @@ MemoryPool<float> pool(64, 128);
 
 
 Get memorys:
+
 Auto p = pool.Alloc();
 
 Free memorys:
@@ -30,9 +32,11 @@ Pool.Free(p);
 
 
 [MemoryStorage]: the usage is showed below:
+
 MemoryStorage<T>(size_t init_size, std::initializer_list<size_t> il_type_sizes); //T: std data, or user-defined pod-type data struct; init_size is the inited size of each size-type memory pool. il_type_sizes is the size-type init list, like:{2, 8, 16, 1024, 128, 31}.
 
 These are some defines:
+
 MemoryStorage<Dem> storage(10, { 1, 699, 102, 32});
 	
 MemoryStorage<int> storage(64, { 102, 32});
@@ -41,6 +45,7 @@ MemoryStorage<char> storage(1, { 1});
 	
 
 Get memorys:
+
 Auto p = storage.Alloc(10);
 
 Free memorys:
@@ -49,7 +54,9 @@ storage.Free(p);
 
 
 Test results compared with new-delete and std::vector:
+
 Test platform: cpu: i3, memory: 8G.
+
 Test cases:
 
 test_new_delete();
